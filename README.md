@@ -118,4 +118,4 @@ Your Name
 
 ---
 
-Made with ❤️ by [Aaditya Kumar] 
+Made with ❤️ by Aaditya Kumar
