@@ -3,7 +3,7 @@
 A modern, responsive web application that generates QR codes for various purposes including text, URLs, contact information, and UPI payments. Built with vanilla JavaScript and features a clean, user-friendly interface with dark/light theme support.
 
 ![QR Code Generator Screenshot]
-(images/qr-code-generator)
+*(images/qr-code-generator.png)*
 
 ## Features
 
