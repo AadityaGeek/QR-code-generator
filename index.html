@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QR Code Generator</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="light-theme">
+  <header>
+    <nav>
+      <div class="logo">
+        <i class="fas fa-qrcode"></i>
+        <span>QR Generator</span>
+      </div>
+      <div class="theme-toggle">
+        <i class="fas fa-sun"></i>
+        <label class="switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider round"></span>
+        </label>
+        <i class="fas fa-moon"></i>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1><i class="fas fa-qrcode"></i> QR Code Generator</h1>
+    
+    <div id="warningMessage" class="warning"></div>
+    
+    <div class="option-group">
+      <label><input type="radio" name="qrType" value="text" checked /> <i class="fas fa-font"></i> Text</label>
+      <label><input type="radio" name="qrType" value="url" /> <i class="fas fa-link"></i> URL</label>
+      <label><input type="radio" name="qrType" value="contact" /> <i class="fas fa-address-card"></i> Contact</label>
+      <label><input type="radio" name="qrType" value="upi" /> <i class="fas fa-indian-rupee-sign"></i> UPI Payment</label>
+    </div>
+
+    <div id="form-text" class="form-section">
+      <div class="input-group">
+        <label for="textInput"><i class="fas fa-keyboard"></i> Enter Text:</label>
+        <textarea id="textInput" rows="3" placeholder="Enter your text here..."></textarea>
+      </div>
+    </div>
+
+    <div id="form-url" class="form-section hidden">
+      <div class="input-group">
+        <label for="urlInput"><i class="fas fa-globe"></i> Enter URL:</label>
+        <input type="url" id="urlInput" placeholder="https://example.com" />
+      </div>
+    </div>
+
+    <div id="form-contact" class="form-section hidden">
+      <div class="input-group">
+        <label for="nameInput"><i class="fas fa-user"></i> Name:</label>
+        <input type="text" id="nameInput" placeholder="Full Name" />
+      </div>
+      <div class="input-group">
+        <label for="phoneInput"><i class="fas fa-phone"></i> Phone:</label>
+        <input type="tel" id="phoneInput" placeholder="Phone Number" />
+      </div>
+      <div class="input-group">
+        <label for="emailInput"><i class="fas fa-envelope"></i> Email (Optional):</label>
+        <input type="text" id="emailInput" placeholder="Email Address" />
+      </div>
+    </div>
+
+    <div id="form-upi" class="form-section hidden">
+      <div class="input-group">
+        <label for="upiInput"><i class="fas fa-id-card"></i> UPI ID:</label>
+        <input type="text" id="upiInput" placeholder="yourname@upi" />
+      </div>
+      <div class="input-group">
+        <label for="amountInput"><i class="fas fa-indian-rupee-sign"></i> Amount (Optional):</label>
+        <input type="number" id="amountInput" placeholder="Enter amount" min="1" step="1" />
+      </div>
+      <div class="input-group">
+        <label for="upiNoteInput"><i class="fas fa-note-sticky"></i> Note (Optional):</label>
+        <input type="text" id="upiNoteInput" placeholder="Payment note" />
+      </div>
+    </div>
+
+    <button id="generateBtn"><i class="fas fa-wand-magic-sparkles"></i> Generate QR Code</button>
+    <div id="qrcode"></div>
+    <button id="downloadBtn" class="secondary-btn hidden"><i class="fas fa-download"></i> Download QR Code</button>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© <span id="currentYear"></span> QR Code Generator. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://github.com/AadityaGeek/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <!-- <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a> -->
+        <a href="https://www.linkedin.com/in/aadityakr/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- QRCode.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <!-- Custom JS -->
+  <script src="main.js"></script>
+</body>
+</html>
