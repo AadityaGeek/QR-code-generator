@@ -252,9 +252,10 @@ button:hover {
   box-shadow: 0 4px 6px -1px var(--shadow-color);
 }
 
+#qrcode canvas,
 #qrcode img {
   background: #ffffff;
-  padding: 8px;
+  padding: 24px;
   border-radius: 8px;
 }
 

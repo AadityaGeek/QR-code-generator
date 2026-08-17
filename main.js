@@ -163,13 +163,23 @@ document.getElementById("generateBtn").addEventListener("click", function () {
   document.getElementById("downloadBtn").classList.remove("hidden");
 });
 
-// Add download functionality
+// Add download functionality with quiet-zone padding
 document.getElementById("downloadBtn").addEventListener("click", function () {
   const qrCanvas = document.querySelector("#qrcode canvas");
   if (qrCanvas) {
+    const padding = 64;
+    const paddedCanvas = document.createElement("canvas");
+    paddedCanvas.width = qrCanvas.width + padding * 2;
+    paddedCanvas.height = qrCanvas.height + padding * 2;
+
+    const ctx = paddedCanvas.getContext("2d");
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, paddedCanvas.width, paddedCanvas.height);
+    ctx.drawImage(qrCanvas, padding, padding);
+
     const link = document.createElement("a");
     link.download = "qr-code.png";
-    link.href = qrCanvas.toDataURL("image/png");
+    link.href = paddedCanvas.toDataURL("image/png");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
