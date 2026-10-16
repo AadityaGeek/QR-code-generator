@@ -2,6 +2,10 @@
 
 A modern, responsive web application that generates QR codes for various purposes including text, URLs, contact information, and UPI payments. Built with vanilla JavaScript and features a clean, user-friendly interface with dark/light theme support.
 
+## Demo
+
+https://github.com/user-attachments/assets/9ab5f3b8-b1ce-40b4-ad5c-2b5678a7c8ec
+
 ## Screenshots
 
 ### Light Theme
